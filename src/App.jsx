@@ -3,11 +3,11 @@
 
 
 
-import Cart from "./Pages/Cart";
+import Home from "./Pages/Home";
 
 const App = () => {
   return (
-   <Cart/>
+   <Home/>
   );
 }
 
