@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser} from '@fortawesome/free-solid-svg-icons'
+import {useSelector , useDispatch} from "react-redux"
 
 
 
@@ -88,6 +89,25 @@ const Icon = styled.div`
 
 
 function Register() {
+
+ 
+
+const {currentUser} = useSelector((rootReducer) => rootReducer.userReducer)
+
+const dispatch = useDispatch()
+
+
+console.log({currentUser})
+
+// Se o tipo for igual , logo o valor de "currentUser deve ser alterado"
+
+const LoginClick = () => {
+    dispatch({
+        type: "User/login",
+    })
+  }
+
+
   return (
     <Container>
         <Wrapper>
@@ -106,7 +126,7 @@ function Register() {
                 <Input placeholder="Confirme a senha"/> 
                 <Terms>Ao se registar você concorda com nossos termos, e está de acordo com nossa <b> POLÍTICA DE PRIVACIDADE</b>  </Terms>
                
-               <Button>REGISTRE-SE</Button>
+               <Button  type="button" onClick ={LoginClick}>REGISTRE-SE</Button>
               
              
 

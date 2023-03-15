@@ -1,13 +1,13 @@
 // armazena state , no caso o state do usuário 
 
 const initialState = {
-    current : null,
+    currentUser : null,
 }
 
 
 const userReducer = (state = initialState, action) => {
-    if (action.type == "User/login"){
-        return{... state , currentUSer : 10}
+    if (action.type === "User/login"){
+        return{ ...state , currentUser : "Cadastrado com sucesso!"}
     }
         return state
 

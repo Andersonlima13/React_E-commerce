@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import {useSelector} from "react-redux"
+
 
 
 const Container = styled.div`
@@ -76,12 +76,6 @@ const Menu = styled.div`
 
 const Navbar = () => {
 
-  const {currentUser} = useSelector((rootReducer) => rootReducer.userReducer)
-
-  console.log({currentUser
-  })
-
-
   return (
     <Container>
       <Wrapper>
@@ -96,7 +90,7 @@ const Navbar = () => {
             <Logo> BuyExpress </Logo>
         </Center>
         <Right> 
-            <Menu>REGISTRAR</Menu>
+            <Menu onClick={LoginClick}>REGISTRAR</Menu>
             <Menu>ENTRAR</Menu>
             <Menu><FontAwesomeIcon icon={faCartShopping} /></Menu>
         </Right>
