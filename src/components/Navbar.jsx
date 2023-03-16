@@ -90,7 +90,7 @@ const Navbar = () => {
             <Logo> BuyExpress </Logo>
         </Center>
         <Right> 
-            <Menu onClick={LoginClick}>REGISTRAR</Menu>
+            <Menu >REGISTRAR</Menu>
             <Menu>ENTRAR</Menu>
             <Menu><FontAwesomeIcon icon={faCartShopping} /></Menu>
         </Right>
