@@ -91,7 +91,7 @@ const Icon = styled.div`
 function Register() {
 
  
-
+// redux , alteração de usuário , jogoar os dados no banco
 const {currentUser} = useSelector((rootReducer) => rootReducer.userReducer)
 
 const dispatch = useDispatch()
@@ -100,6 +100,9 @@ const dispatch = useDispatch()
 console.log({currentUser})
 
 // Se o tipo for igual , logo o valor de "currentUser deve ser alterado"
+
+
+// interligar o front-end com o back e cadastrar os usuarios 
 
 const LoginClick = () => {
     dispatch({
