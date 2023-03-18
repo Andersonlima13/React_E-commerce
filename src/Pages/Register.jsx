@@ -2,7 +2,8 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser} from '@fortawesome/free-solid-svg-icons'
 import {useSelector , useDispatch} from "react-redux"
-
+import { useState, useEffect } from "react"
+import axios from 'axios';
 
 
 const Container = styled.div`
@@ -103,6 +104,34 @@ console.log({currentUser})
 
 
 // interligar o front-end com o back e cadastrar os usuarios 
+
+const  [Login,setLogin] = useState(null)
+
+const authLogin = (token) => {
+    setLogin(token);
+};
+
+
+useEffect(() => {
+    const makeRequest = async () => {
+        try{
+            const response = await axios.post("http://localhost:5000/api/auth/register",
+            {
+                username:Login.username,
+                email:Login.email,
+                password:Login.CryptoJS.AES.encrypt.toString()
+            }
+            )
+        console.log(response.data)
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+Login && makeRequest()
+
+}, [Login])
+
 
 const LoginClick = () => {
     dispatch({
