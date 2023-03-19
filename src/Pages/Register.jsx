@@ -1,9 +1,12 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser} from '@fortawesome/free-solid-svg-icons'
-import {useSelector , useDispatch} from "react-redux"
-import { useState, useEffect } from "react"
-import axios from 'axios';
+//import {useSelector , useDispatch} from "react-redux"
+//import { useState, useEffect } from "react"
+//import axios from 'axios';
+import { Formik , Form , Field} from "formik"
+import "../CSS/Form.css" 
+
 
 
 const Container = styled.div`
@@ -38,13 +41,13 @@ const Title = styled.h1`
     color: black;
     text-shadow: 1px 1px 2px white, 0 0 25px blue, 0 0 5px #ee2853;`
 
-const Form = styled.form`
+/*const Form = styled.form`
     
     
     display:flex;
     flex-direction:column;`
-
-const Input = styled.input`
+*/
+/*const Input = styled.input`
     flex: 1;
 
     margin: 20px 10px 0px 0px;
@@ -55,7 +58,7 @@ const Input = styled.input`
     outline:none;
     
      `
-
+*/
 const Terms = styled.span`
 
     font-size: 18px;
@@ -93,19 +96,19 @@ function Register() {
 
  
 // redux , alteração de usuário , jogoar os dados no banco
-const {currentUser} = useSelector((rootReducer) => rootReducer.userReducer)
+//const {currentUser} = useSelector((rootReducer) => rootReducer.userReducer)
 
-const dispatch = useDispatch()
+//const dispatch = useDispatch()
 
 
-console.log({currentUser})
+//console.log({currentUser})
 
 // Se o tipo for igual , logo o valor de "currentUser deve ser alterado"
 
 
 // interligar o front-end com o back e cadastrar os usuarios 
 
-const  [Login,setLogin] = useState(null)
+/*const  [Login,setLogin] = useState(null)
 
 const authLogin = (token) => {
     setLogin(token);
@@ -131,13 +134,18 @@ useEffect(() => {
 Login && makeRequest()
 
 }, [Login])
+*/
+
+//const LoginClick = () => {
+//    dispatch({
+        //type: "User/login",
+//    })
+//  }
 
 
-const LoginClick = () => {
-    dispatch({
-        type: "User/login",
-    })
-  }
+
+
+const handleClickLogin = (values) => console.log(values)
 
 
   return (
@@ -146,25 +154,26 @@ const LoginClick = () => {
         <Icon><FontAwesomeIcon icon={faUser} /></Icon>
             <Title> Criar Conta</Title>
             
-            
-            <Form>
-            
-                 <Input placeholder="Nome" />  
+            <Formik initialValues ={{}} onSubmit={handleClickLogin}>
+            <Form  className = "sub">
+           
+                 <Field className="input" name="user" placeholder="Nome" />  
                  
-                <Input placeholder="E-mail" />
+                <Field className="input" name="email" placeholder="E-mail" />
                 
-                <Input placeholder="Número" />
-                <Input placeholder="Senha" />
-                <Input placeholder="Confirme a senha"/> 
+                <Field className="input" name="number" placeholder="Número" />
+                <Field className="input" name="password" placeholder="Senha" />
+                <Field className="input" name="confirm" placeholder="Confirme a senha"/> 
                 <Terms>Ao se registar você concorda com nossos termos, e está de acordo com nossa <b> POLÍTICA DE PRIVACIDADE</b>  </Terms>
                
-               <Button  type="button" onClick ={LoginClick}>REGISTRE-SE</Button>
-              
-             
+               <Button  type="submit">REGISTRE-SE</Button>
+            
+               
 
 
               
             </Form>
+            </Formik>
         </Wrapper>
     </Container>
   )
