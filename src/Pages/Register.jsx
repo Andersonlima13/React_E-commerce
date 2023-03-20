@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser} from '@fortawesome/free-solid-svg-icons'
 //import {useSelector , useDispatch} from "react-redux"
 //import { useState, useEffect } from "react"
-//import axios from 'axios';
+import Axios from 'axios';
 import { Formik , Form , Field} from "formik"
 import "../CSS/Form.css" 
 
@@ -145,7 +145,17 @@ Login && makeRequest()
 
 
 
-const handleClickLogin = (values) => console.log(values)
+const handleClickLogin = (values) => {
+    Axios.post("http://localhost:5000/api/auth/register", {
+        username:values.username,
+        email: values.email,
+        password: values.password,        
+    }).then((response) => {
+        console.log(response)
+    })
+}
+
+
 
 
   return (
@@ -154,10 +164,10 @@ const handleClickLogin = (values) => console.log(values)
         <Icon><FontAwesomeIcon icon={faUser} /></Icon>
             <Title> Criar Conta</Title>
             
-            <Formik initialValues ={{}} onSubmit={handleClickLogin}>
+            <Formik initialValues ={{}} onSubmit={handleClickLogin} >
             <Form  className = "sub">
            
-                 <Field className="input" name="user" placeholder="Nome" />  
+                 <Field className="input" name="username" placeholder="Nome" />  
                  
                 <Field className="input" name="email" placeholder="E-mail" />
                 
