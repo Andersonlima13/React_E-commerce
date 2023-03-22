@@ -92,6 +92,8 @@ const Icon = styled.div`
 
 
 
+    
+
 function Register() {
 
  
@@ -144,16 +146,16 @@ Login && makeRequest()
 
 
 
-
-const handleClickLogin = (values) => {
-    Axios.post("http://localhost:5000/api/auth/register", {
-        username:values.username,
-        email: values.email,
-        password: values.password,        
-    }).then((response) => {
-        console.log(response)
-    })
+const handleClickLogin = async (values) => {
+    await Axios.post("http://localhost:5000/api/auth/register", {
+       username:values.username,
+       email: values.email,
+       password: values.password,        
+   }).then((response) => {
+       console.log(response)
+   })
 }
+
 
 
 
@@ -164,7 +166,7 @@ const handleClickLogin = (values) => {
         <Icon><FontAwesomeIcon icon={faUser} /></Icon>
             <Title> Criar Conta</Title>
             
-            <Formik initialValues ={{}} onSubmit={handleClickLogin} >
+            <Formik initialValues ={{}} onSubmit={handleClickLogin}>
             <Form  className = "sub">
            
                  <Field className="input" name="username" placeholder="Nome" />  

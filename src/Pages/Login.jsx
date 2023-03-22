@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser} from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios'
 
 
 
@@ -90,6 +91,22 @@ const Icon = styled.div`
 
 
 
+const Login = async (values) => {
+    try{
+        const response = await axios.post("http://localhost:5000/api/auth/login",
+        {
+            username:values.username,
+            password:values.password
+        }
+        )
+    console.log(response.data)
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+
 function Register() {
   return (
     <Container>
@@ -98,12 +115,12 @@ function Register() {
             <Title>LOGIN</Title>
             
             
-            <Form>      
-                <Input placeholder="E-mail" />
-                <Input placeholder="Senha" />
+            <Form onClick={Login}>      
+                <Input placeholder="E-mail" name="username" />
+                <Input placeholder="Senha"  name='password'/>
                 <Link>ESQUECEU SUA SENHA ?</Link>
                 <Link>CRIAR UMA NOVA CONTA</Link>
-               <Button>ENTRAR</Button>
+               <Button type='submit'>ENTRAR</Button>
               
              
 
