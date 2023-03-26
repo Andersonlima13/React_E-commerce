@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser} from '@fortawesome/free-solid-svg-icons'
-import axios from 'axios'
+import Axios from 'axios'
+import { Formik , Form , Field} from "formik"
+import "../CSS/Form.css" 
 
 
 
@@ -38,7 +40,7 @@ const Title = styled.h1`
     color: black;
     text-shadow: 1px 1px 2px white, 0 0 25px blue, 0 0 5px #ee2853;`
 
-const Form = styled.form`
+/*const Form = styled.form`
     
     
     display:flex;
@@ -55,7 +57,7 @@ const Input = styled.input`
     outline:none;
     
      `
-
+*/
 const Link = styled.a` 
     text-decoration: underline;
     cursor : pointer;
@@ -91,45 +93,43 @@ const Icon = styled.div`
 
 
 
-const Login = async (values) => {
-    try{
-        const response = await axios.post("http://localhost:5000/api/auth/login",
-        {
-            username:values.username,
-            password:values.password
-        }
-        )
-    console.log(response.data)
+    const LoginUser = async (values) => {
+        await Axios.post("http://localhost:5000/api/auth/login", {
+           username:values.username,
+           password: values.password,        
+       }).then((response) => {
+           console.log(response)
+       })
     }
-    catch(err){
-        console.log(err)
-    }
-}
+    
+    
+   
 
 
-function Register() {
+function Login() {
   return (
     <Container>
         <Wrapper>
         <Icon><FontAwesomeIcon icon={faUser} /></Icon>
             <Title>LOGIN</Title>
+           <Formik  initialValues ={{}} onSubmit={LoginUser}>
             
-            
-            <Form onClick={Login}>      
-                <Input placeholder="E-mail" name="username" />
-                <Input placeholder="Senha"  name='password'/>
+            <Form className="Form">      
+                <Field className="input" placeholder="E-mail" name="username" />
+                <Field className="input" placeholder="Senha"  name="password"/>
                 <Link>ESQUECEU SUA SENHA ?</Link>
                 <Link>CRIAR UMA NOVA CONTA</Link>
-               <Button type='submit'>ENTRAR</Button>
+               <Button href="./Home" type='submit'>ENTRAR</Button>
               
-             
+               
 
 
               
             </Form>
+            </Formik>
         </Wrapper>
     </Container>
   )
 }
 
-export default Register
+export default Login

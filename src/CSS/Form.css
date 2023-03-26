@@ -13,3 +13,8 @@
     background-color: transparent ;
     outline:none;
 }
+
+.Form { 
+    display:flex;
+    flex-direction:column;
+}

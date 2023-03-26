@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import {useNavigate } from "react-router-dom"
 
 
 
@@ -74,7 +75,18 @@ const Menu = styled.div`
 
 
 
+
 const Navbar = () => {
+
+const navigate = useNavigate();
+const Registrar = () => {
+    navigate ('/Register')}
+
+const Entrar = () => {
+  navigate ('/Login')
+
+}
+
 
   return (
     <Container>
@@ -90,8 +102,8 @@ const Navbar = () => {
             <Logo> BuyExpress </Logo>
         </Center>
         <Right> 
-            <Menu >REGISTRAR</Menu>
-            <Menu>ENTRAR</Menu>
+            <Menu   onClick={Registrar} >REGISTRAR</Menu>
+            <Menu onClick={Entrar}>ENTRAR</Menu>
             <Menu><FontAwesomeIcon icon={faCartShopping} /></Menu>
         </Right>
       </Wrapper>

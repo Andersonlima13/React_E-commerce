@@ -6,6 +6,7 @@ import { faUser} from '@fortawesome/free-solid-svg-icons'
 import Axios from 'axios';
 import { Formik , Form , Field} from "formik"
 import "../CSS/Form.css" 
+import {useNavigate } from "react-router-dom"
 
 
 
@@ -146,6 +147,9 @@ Login && makeRequest()
 
 
 
+
+
+
 const handleClickLogin = async (values) => {
     await Axios.post("http://localhost:5000/api/auth/register", {
        username:values.username,
@@ -178,7 +182,7 @@ const handleClickLogin = async (values) => {
                 <Field className="input" name="confirm" placeholder="Confirme a senha"/> 
                 <Terms>Ao se registar você concorda com nossos termos, e está de acordo com nossa <b> POLÍTICA DE PRIVACIDADE</b>  </Terms>
                
-               <Button  type="submit">REGISTRE-SE</Button>
+               <Button type="submit">REGISTRE-SE</Button>
             
                
 
