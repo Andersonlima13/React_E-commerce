@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch , faShoppingBasket , faHeart } from '@fortawesome/free-solid-svg-icons'
-
+import {useNavigate } from "react-router-dom"
 
 const Info = styled.div`
   opacity: 0;
@@ -65,12 +65,18 @@ const Icon = styled.div`
 
 
 const Product = ({item}) => {
+
+  const navigate = useNavigate();
+const NavProduct = () => {
+    navigate ('/Register')}
+
+
   return (
     <Container>
       <Circle/>
       <Image src={item.img}/>
       <Info>
-        <Icon><FontAwesomeIcon icon={faShoppingBasket} /></Icon>
+        <Icon><FontAwesomeIcon onClick = {NavProduct} icon={faShoppingBasket} /></Icon>
         <Icon><FontAwesomeIcon icon={faSearch} /></Icon>
         <Icon><FontAwesomeIcon icon={faHeart} /></Icon>
       </Info>
