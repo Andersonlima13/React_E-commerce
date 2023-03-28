@@ -6,12 +6,10 @@ import { faUser} from '@fortawesome/free-solid-svg-icons'
 import Axios from 'axios';
 import { Formik , Form , Field} from "formik"
 import "../CSS/Form.css" 
-import {useNavigate } from "react-router-dom"
 
 
 
 const Container = styled.div`
-
     color:#000;
     width : 100vw ; 
     height : 100vh;
@@ -50,7 +48,6 @@ const Title = styled.h1`
 */
 /*const Input = styled.input`
     flex: 1;
-
     margin: 20px 10px 0px 0px;
     padding : 10px;
     border:none;
@@ -61,7 +58,6 @@ const Title = styled.h1`
      `
 */
 const Terms = styled.span`
-
     font-size: 18px;
     margin: 20px 0px;`
 
@@ -74,14 +70,12 @@ const Button = styled.button`
     border: 2px solid;
     background-color: transparent;
     font-weight:bold;
-
     &:hover{
         background-color: #ee2853;
         transform: scale(1.1);
         transition-property:background-color;
         transition-duration: 1000ms;
       }
-
      `
 const Icon = styled.div`
     color: #ee2853;
@@ -112,12 +106,9 @@ function Register() {
 // interligar o front-end com o back e cadastrar os usuarios 
 
 /*const  [Login,setLogin] = useState(null)
-
 const authLogin = (token) => {
     setLogin(token);
 };
-
-
 useEffect(() => {
     const makeRequest = async () => {
         try{
@@ -135,7 +126,6 @@ useEffect(() => {
         }
     }
 Login && makeRequest()
-
 }, [Login])
 */
 
