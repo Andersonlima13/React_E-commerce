@@ -100,42 +100,17 @@ function Register() {
 
 //console.log({currentUser})
 
-// Se o tipo for igual , logo o valor de "currentUser deve ser alterado"
 
-
-// interligar o front-end com o back e cadastrar os usuarios 
-
-/*const  [Login,setLogin] = useState(null)
-const authLogin = (token) => {
-    setLogin(token);
-};
-useEffect(() => {
-    const makeRequest = async () => {
-        try{
-            const response = await axios.post("http://localhost:5000/api/auth/register",
-            {
-                username:Login.username,
-                email:Login.email,
-                password:Login.CryptoJS.AES.encrypt.toString()
-            }
-            )
-        console.log(response.data)
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
-Login && makeRequest()
-}, [Login])
-*/
+// é interessante transformar o type : "user / login " em variável, para evitar possiveis erros.
 
 //const LoginClick = () => {
 //    dispatch({
         //type: "User/login",
+        // payload : {name : "nome", email : "email ", senha:" senha"},  // no payload podemos passar os dados que queremos passar para o console
 //    })
 //  }
 
-
+// também é boa pratica escrever o dispatch em um arquivo à parte
 
 
 
