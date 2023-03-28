@@ -95,7 +95,7 @@ function Register() {
 // redux , alteração de usuário , jogoar os dados no banco
 //const {currentUser} = useSelector((rootReducer) => rootReducer.userReducer)
 
-//const dispatch = useDispatch()
+//cont dispatch = useDispatch()
 
 
 //console.log({currentUser})
