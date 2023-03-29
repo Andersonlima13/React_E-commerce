@@ -2,6 +2,8 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch , faShoppingBasket , faHeart } from '@fortawesome/free-solid-svg-icons'
 import {useNavigate } from "react-router-dom"
+import {useDispatch} from "react-redux"
+import { addProduct } from "../Redux/Cart/Actions"
 
 const Info = styled.div`
   opacity: 0;
@@ -66,12 +68,24 @@ const Icon = styled.div`
 
 const Product = ({item}) => {
 
+const dispatch = useDispatch()
+const HandleProduct = () => {
+    dispatch(addProduct(item))
+  
+}
+
+
+
+
 const navigate = useNavigate();
 const NavProduct = () => {
     navigate ('/ProductList')}
 
 const Product = () => {
 navigate ('/Product')}
+
+
+
 
 
   return (
@@ -81,7 +95,7 @@ navigate ('/Product')}
       <Info>
         <Icon><FontAwesomeIcon onClick = {Product} icon={faShoppingBasket} /></Icon>
         <Icon><FontAwesomeIcon onClick = {NavProduct} icon={faSearch} /></Icon>
-        <Icon><FontAwesomeIcon   icon={faHeart} /></Icon>
+        <Icon><FontAwesomeIcon   onClick = {HandleProduct} icon={faHeart} /></Icon>
       </Info>
     </Container>
   )
