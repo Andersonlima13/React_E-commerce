@@ -66,9 +66,12 @@ const Icon = styled.div`
 
 const Product = ({item}) => {
 
-  const navigate = useNavigate();
+const navigate = useNavigate();
 const NavProduct = () => {
-    navigate ('/Register')}
+    navigate ('/ProductList')}
+
+const Product = () => {
+navigate ('/Product')}
 
 
   return (
@@ -76,9 +79,9 @@ const NavProduct = () => {
       <Circle/>
       <Image src={item.img}/>
       <Info>
-        <Icon><FontAwesomeIcon onClick = {NavProduct} icon={faShoppingBasket} /></Icon>
-        <Icon><FontAwesomeIcon icon={faSearch} /></Icon>
-        <Icon><FontAwesomeIcon icon={faHeart} /></Icon>
+        <Icon><FontAwesomeIcon onClick = {Product} icon={faShoppingBasket} /></Icon>
+        <Icon><FontAwesomeIcon onClick = {NavProduct} icon={faSearch} /></Icon>
+        <Icon><FontAwesomeIcon   icon={faHeart} /></Icon>
       </Info>
     </Container>
   )

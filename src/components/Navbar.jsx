@@ -87,12 +87,22 @@ const Entrar = () => {
 
 }
 
+const Cart = () => {
+  navigate ('/Cart')
+
+}
+
+const Home = () => {
+  navigate ('/')
+
+}
+
 
   return (
     <Container>
       <Wrapper>
         <Left>
-            <Language>PT/BR</Language>
+            <Language onClick={Home}  >PT/BR</Language>
             <SearchContainer>
                 <Input />
                 <FontAwesomeIcon style = {{color:"gray"}} icon={faSearch} />
@@ -104,7 +114,7 @@ const Entrar = () => {
         <Right> 
             <Menu   onClick={Registrar} >REGISTRAR</Menu>
             <Menu onClick={Entrar}>ENTRAR</Menu>
-            <Menu><FontAwesomeIcon icon={faCartShopping} /></Menu>
+            <Menu onClick={Cart} ><FontAwesomeIcon icon={faCartShopping} /></Menu>
         </Right>
       </Wrapper>
     </Container>

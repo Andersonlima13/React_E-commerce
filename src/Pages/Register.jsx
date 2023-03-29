@@ -9,6 +9,7 @@ import "../CSS/Form.css"
 
 
 
+
 const Container = styled.div`
     color:#000;
     width : 100vw ; 
@@ -155,8 +156,11 @@ const handleClickLogin = async (values) => {
               
             </Form>
             </Formik>
+            
         </Wrapper>
+       
     </Container>
+    
   )
 }
 
