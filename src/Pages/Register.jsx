@@ -2,10 +2,16 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser} from '@fortawesome/free-solid-svg-icons'
 //import {useSelector , useDispatch} from "react-redux"
-//import { useState, useEffect } from "react"
-import Axios from 'axios';
-import { Formik , Form , Field} from "formik"
+import { useState, useEffect } from "react"
+import axios from 'axios';
+
 import "../CSS/Form.css" 
+
+
+
+const api = axios.create({
+    baseURL : 'http://localhost:5000/api'
+});
 
 
 
@@ -41,13 +47,13 @@ const Title = styled.h1`
     color: black;
     text-shadow: 1px 1px 2px white, 0 0 25px blue, 0 0 5px #ee2853;`
 
-/*const Form = styled.form`
+const Form = styled.form`
     
     
     display:flex;
     flex-direction:column;`
-*/
-/*const Input = styled.input`
+
+const Input = styled.input`
     flex: 1;
     margin: 20px 10px 0px 0px;
     padding : 10px;
@@ -57,7 +63,7 @@ const Title = styled.h1`
     outline:none;
     
      `
-*/
+
 const Terms = styled.span`
     font-size: 18px;
     margin: 20px 0px;`
@@ -114,10 +120,37 @@ function Register() {
 // também é boa pratica escrever o dispatch em um arquivo à parte
 
 
+const [User, setUser ] = useState([])
+const [Name, setName] = useState('')
+const [Pass, setPass] = useState('')
+const [Email, setEmail] = useState('')
 
 
-const handleClickLogin = async (values) => {
-    await Axios.post("http://localhost:5000/api/auth/register", {
+useEffect (() => {
+    api.get('/user' ).then((response) => {
+        console.log(response.data)
+        setUser(response.data)
+    })
+} , [])
+
+
+
+
+async function handleClickLogin() {
+     await api.post('/auth/register', {
+        Name,
+        Pass,
+        Email,
+    }).then((response) =>{
+        console.log(response)
+    })
+}
+
+
+
+
+/*const handleClickLogin = async (values) => {
+    await axios.post("http://localhost:5000/api/auth/register", {
        username:values.username,
        email: values.email,
        password: values.password,        
@@ -125,7 +158,7 @@ const handleClickLogin = async (values) => {
        console.log(response)
    })
 }
-
+*/
 
 
 
@@ -136,26 +169,26 @@ const handleClickLogin = async (values) => {
         <Icon><FontAwesomeIcon icon={faUser} /></Icon>
             <Title> Criar Conta</Title>
             
-            <Formik initialValues ={{}} onSubmit={handleClickLogin}>
+            
             <Form  className = "sub">
            
-                 <Field className="input" name="username" placeholder="Nome" />  
+                 <Input  placeholder="Nome" onChange={event => setName(event.target.value)} />  
                  
-                <Field className="input" name="email" placeholder="E-mail" />
+                <Input placeholder="E-mail" onChange={event => setEmail(event.target.value)} />
                 
-                <Field className="input" name="number" placeholder="Número" />
-                <Field className="input" name="password" placeholder="Senha" />
-                <Field className="input" name="confirm" placeholder="Confirme a senha"/> 
+                <Input  placeholder="Número" />
+                <Input placeholder="Senha" onChange={event => setPass(event.target.value)} />
+                <Input  placeholder="Confirme a senha" /> 
                 <Terms>Ao se registar você concorda com nossos termos, e está de acordo com nossa <b> POLÍTICA DE PRIVACIDADE</b>  </Terms>
                
-               <Button type="submit">REGISTRE-SE</Button>
+               <Button  type="button" onClick={handleClickLogin}>REGISTRE-SE</Button>
             
                
 
 
               
             </Form>
-            </Formik>
+            
             
         </Wrapper>
        
