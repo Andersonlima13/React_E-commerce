@@ -97,9 +97,9 @@ navigate ('/Product')}
       <Image src={item.img} />
       <Info>
         
-        <Icon><FontAwesomeIcon onClick = {ProductRoute} icon={faShoppingBasket} /></Icon>
+        <Icon><FontAwesomeIcon  onClick = {ProductRoute} icon={faShoppingBasket} /></Icon>
         <Icon><FontAwesomeIcon onClick = {NavProduct} icon={faSearch} /></Icon>
-        <Icon><FontAwesomeIcon  onClick = {HandleProduct}  icon={faHeart} /></Icon>
+        <Icon onClick = {HandleProduct}  ><FontAwesomeIcon   icon={faHeart} /></Icon>
       </Info>
     </Container>
   )
