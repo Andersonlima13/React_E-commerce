@@ -1,7 +1,7 @@
 {
   "name": "payment",
   "version": "0.1.0",
-  "homepage": "React_E-commerce/",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",

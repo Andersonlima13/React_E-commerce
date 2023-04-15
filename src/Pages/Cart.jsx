@@ -5,6 +5,8 @@ import Footer from "../components/Footer";
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPlusCircle , faMinusCircle} from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from "react-redux"
+import Product from '../components/Product';
 
 
 
@@ -54,7 +56,7 @@ const Info = styled.div`
 
 
 
-const Product = styled.div`
+const ProductContainer = styled.div`
     display:flex;
     justify-content:space-between;
 `
@@ -149,6 +151,10 @@ const Button = styled.button`
 
 
 function Cart() {
+
+
+    const {products} = useSelector((rootReducer) => rootReducer.cartReducer);
+
   return (
     <Container>
         <Navbar />
@@ -165,8 +171,9 @@ function Cart() {
             </Top>
             <Bottom>
                 <Info>
-                    <Product>
+                    <ProductContainer>
                         <ProductDetail>
+                            {products.map((item) => ( <Product item={item} /> ))}
                             <Image src = "https://www.womenwantadventure.com.au/persistent/catalogue_images/products/wwatop.png"/>
                             <Details>
                                 <ProductName> <b>Nome</b> Nome do produto</ProductName>
@@ -183,9 +190,9 @@ function Cart() {
                             </ProductAmount>
                             <Price> R$ 30 </Price>
                         </PriceDetail>
-                    </Product>
+                    </ProductContainer>
                     <Hr/>
-                    <Product>
+                    <ProductContainer>
                         <ProductDetail>
                             <Image src = "https://tse1.mm.bing.net/th?id=OIP.kkYSSKfbR8m8kXQzySV7TgHaHZ&pid=Api&P=0"/>
                             <Details>
@@ -203,7 +210,7 @@ function Cart() {
                             </ProductAmount>
                             <Price> R$ 50 </Price>
                         </PriceDetail>
-                    </Product>
+                    </ProductContainer>
                 </Info>
                 <Summary>
                     <SummaryTitle> PEDIDO </SummaryTitle>
