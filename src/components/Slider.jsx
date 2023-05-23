@@ -45,6 +45,7 @@ const Slide = styled.div`
   background-color: #${props => props.bg}`
 
 const Image = styled.img`
+  width:90vh;
   height:80%
 `
 
@@ -68,7 +69,12 @@ const Button = styled.button`
   padding : 10px;
   background-color:transparent;
   cursor : pointer;
-  font-size:20px;`
+  font-size:20px;
+  &:hover{
+    background: linear-gradient(90deg, rgba(244,28,87,1) 14%, rgba(156,40,81,1) 67%);
+    transform: scale(1.25);
+    
+  }`
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);

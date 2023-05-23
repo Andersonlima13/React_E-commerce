@@ -1,24 +1,24 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://i.ibb.co/sFt1dyr/Fashion-Girl-PNG-Image.png",
+      img: "https://images.pexels.com/photos/5625130/pexels-photo-5625130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       title: "TOTAL-PROMO",
       desc: "APROVEITE! APENAS HOJE QUALQUER ITEM NA LOJA COM 10 % DE DESCONTO !",
-      bg: "ffbdad",
+      bg: "EAEAEA",
     },
     {
       id: 2,
-      img: "https://i.ibb.co/x6jq11r/26651-8-mens-fashion-file.png",
+      img: "https://images.pexels.com/photos/1793306/pexels-photo-1793306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       title: "MODA MASCULINA",
       desc: "AINDA MAIS NOVIDADES NO CATÁLOGO PARA HOMENS, CONFIRA AGORA !",
-      bg: "b0a8a4",
+      bg: "f6944b",
     },
     {
       id: 3,
-      img: "https://i.ibb.co/cXFnLLV/3.png",
+      img: "https://images.pexels.com/photos/7325856/pexels-photo-7325856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       title: "CATÁLOGO DE VERÃO",
       desc: "CONFIRA AS MAIS NOVAS PEÇAS DA TEMPORADA DE VERÃO !",
-      bg: "ffc94b",
+      bg: "fee883",
       
     },
   ];
