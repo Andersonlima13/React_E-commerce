@@ -4,6 +4,7 @@ import { faUser} from '@fortawesome/free-solid-svg-icons'
 import Axios from 'axios'
 import { Formik , Form , Field} from "formik"
 import "../CSS/Form.css" 
+import {mobile} from "../responsive";
 
 
 
@@ -26,6 +27,7 @@ const Wrapper = styled.div`
     border: 1px solid;
     border-radius : 10%;
     box-shadow: 1px 1px 12px 10px #ee2853;
+     ${mobile({ width: "75%" })}
    
     
     `

@@ -4,6 +4,8 @@ import { faUser} from '@fortawesome/free-solid-svg-icons'
 //import {useSelector , useDispatch} from "react-redux"
 import { useState, useEffect } from "react"
 import axios from 'axios';
+import { mobile } from "../responsive";
+
 
 import "../CSS/Form.css" 
 
@@ -33,7 +35,7 @@ const Wrapper = styled.div`
     border: 1px solid;
     border-radius : 10%;
     box-shadow: 1px 1px 12px 10px #ee2853;
-   
+     ${mobile({ width: "75%" })}
     
     `
 

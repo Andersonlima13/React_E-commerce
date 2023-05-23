@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPlusCircle , faMinusCircle} from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from "react-redux"
 import Product from '../components/Product';
+import { mobile } from "../responsive";
 
 
 
@@ -18,6 +19,7 @@ const Title = styled.h1`
     text-align: center`
 
 const Wrapper = styled.div`
+    ${mobile({ padding: "10px" })};
     padding : 20px;`
 
 const Top = styled.div`
@@ -36,6 +38,7 @@ const TopButton = styled.button`
 
 
 const TopTexts = styled.div`
+ ${mobile({ display: "none" })}
     `
 
 const Text = styled.span`
@@ -48,6 +51,7 @@ const Text = styled.span`
 const Bottom = styled.div`
     display : flex;
     justify-content: space-between;
+    ${mobile({ flexDirection: "column" })}
     `
 
 const Info = styled.div`
@@ -59,6 +63,7 @@ const Info = styled.div`
 const ProductContainer = styled.div`
     display:flex;
     justify-content:space-between;
+    ${mobile({ flexDirection: "column" })}
 `
 
 const ProductDetail = styled.div`
@@ -96,15 +101,18 @@ const ProductSize = styled.span``
 const ProductAmount = styled.div`
     display : flex;
     align-items: center;
-    margin-bottom: 20px;`
+    margin-bottom: 20px;
+    `
 
 const Amount = styled.div`
     font-size : 24px;
-    margin 5px;`
+    margin 5px;
+    ${mobile({ margin: "5px 15px" })}`
 
 const Price = styled.span`
     font-size : 30px;
-    font-weight: 200;`
+    font-weight: 200;
+     ${mobile({ marginBottom: "20px" })}`
 
 const Hr = styled.hr`
     background-color:#ffff;`
