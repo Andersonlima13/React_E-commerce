@@ -161,7 +161,7 @@ const Button = styled.button`
 function Cart() {
 
 
-    const {products} = useSelector((rootReducer) => rootReducer.cartReducer);
+//const {products} = useSelector((rootReducer) => rootReducer.cartReducer);
 
   return (
     <Container>
@@ -181,7 +181,7 @@ function Cart() {
                 <Info>
                     <ProductContainer>
                         <ProductDetail>
-                            {products.map((item) => ( <Product item={item} /> ))}
+
                             <Image src = "https://www.womenwantadventure.com.au/persistent/catalogue_images/products/wwatop.png"/>
                             <Details>
                                 <ProductName> <b>Nome</b> Nome do produto</ProductName>
