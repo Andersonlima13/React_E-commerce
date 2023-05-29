@@ -24,24 +24,30 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  font-weight:bold;
+  
 `;
 
 const Language = styled.span`
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
+  text-shadow: 1px 1px 2px #e61543;
  
 `;
 
 const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
+  border: 0.5px solid black;
   display: flex;
   align-items: center;
   margin-left: 25px;
   padding: 5px;
+  box-shadow: 1px 1px 2px #e61543;
 `;
 
 const Input = styled.input`
   border: none;
+  outline:none;
+ 
   
 `;
 
@@ -52,6 +58,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  text-shadow: 1px 1px 2px #e61543;
   
 `;
 const Right = styled.div`
@@ -59,6 +66,8 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  font-weight:bold;
+
   
 `;
 
@@ -66,10 +75,14 @@ const Menu = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  text-shadow: 1px 1px 2px #e61543;
   &:hover{
-    background-color: #ee2853;
+    text-shadow: 1px 4px 10px #e61543;
     transform: scale(1.1);
+    transition-property:background-color;
+    transition-duration: 1000ms;
   }
+
   
 `;
 
@@ -102,10 +115,10 @@ const Home = () => {
     <Container>
       <Wrapper>
         <Left>
-            <Language onClick={Home}  >PT/BR</Language>
+            <Language onClick={Home}>PT/BR</Language>
             <SearchContainer>
                 <Input />
-                <FontAwesomeIcon style = {{color:"gray"}} icon={faSearch} />
+                <FontAwesomeIcon style = {{color:"black"}} icon={faSearch} />
             </SearchContainer>
         </Left>
         <Center>
