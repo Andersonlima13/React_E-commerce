@@ -1,21 +1,21 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://images.pexels.com/photos/5625130/pexels-photo-5625130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      img: "https://w7.pngwing.com/pngs/959/632/png-transparent-credit-card-ad-advertisement-shopping-debit-card.png",
       title: "TOTAL-PROMO",
       desc: "APROVEITE! APENAS HOJE QUALQUER ITEM NA LOJA COM 10 % DE DESCONTO !",
       bg: "EAEAEA",
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/1793306/pexels-photo-1793306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      img: "https://ibb.co/7KbV8z9",
       title: "MODA MASCULINA",
       desc: "AINDA MAIS NOVIDADES NO CATÁLOGO PARA HOMENS, CONFIRA AGORA !",
-      bg: "f6944b",
+      bg: "00000",
     },
     {
       id: 3,
-      img: "https://images.pexels.com/photos/7325856/pexels-photo-7325856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      img: "https://ibb.co/LJpDm70",
       title: "CATÁLOGO DE VERÃO",
       desc: "CONFIRA AS MAIS NOVAS PEÇAS DA TEMPORADA DE VERÃO !",
       bg: "fee883",
