@@ -1,24 +1,24 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://w7.pngwing.com/pngs/959/632/png-transparent-credit-card-ad-advertisement-shopping-debit-card.png",
+      img: "https://img.freepik.com/free-vector/flat-hand-drawn-people-shopping_23-2148823204.jpg?w=740&t=st=1688862395~exp=1688862995~hmac=a75513d3b28e5f3562219bf1758ba175382092d2f7f3d44d759cf8b7fff6f926",
       title: "TOTAL-PROMO",
       desc: "APROVEITE! APENAS HOJE QUALQUER ITEM NA LOJA COM 10 % DE DESCONTO !",
-      bg: "EAEAEA",
+      bg: "ffffff",
     },
     {
       id: 2,
-      img: "https://ibb.co/7KbV8z9",
+      img: "https://img.freepik.com/free-vector/shoe-store-scene-with-young-guy-chooses-new-pair-running-sneakers-department-sports-shoes-male-consultant-helps-buyer-with-purchase_575670-928.jpg?w=740&t=st=1688862445~exp=1688863045~hmac=cace130b41f480ea4e50eeaaae661252eac8d5485797e80fb1da9da62245996b",
       title: "MODA MASCULINA",
       desc: "AINDA MAIS NOVIDADES NO CATÁLOGO PARA HOMENS, CONFIRA AGORA !",
       bg: "00000",
     },
     {
       id: 3,
-      img: "https://ibb.co/LJpDm70",
+      img: "https://img.freepik.com/premium-vector/shopping-woman-cartoon-girl-buys-wear-dresses-shoes-big-fashion-shop-sales-clothing-circle-scene-choice-amidst-clothes-accessories-chaos-paper-shopping-bags-vector-fashion-concept_176411-3588.jpg?w=740",
       title: "CATÁLOGO DE VERÃO",
       desc: "CONFIRA AS MAIS NOVAS PEÇAS DA TEMPORADA DE VERÃO !",
-      bg: "fee883",
+      bg: "ffff",
       
     },
   ];
