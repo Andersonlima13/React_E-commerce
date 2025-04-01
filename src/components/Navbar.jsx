@@ -9,7 +9,7 @@ import {useNavigate } from "react-router-dom"
 
 const Container = styled.div`
   height: 60px;
-  background-color :#dac7c7;
+  background-color :#ffdde1;
  
 `;
 
